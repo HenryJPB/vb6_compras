@@ -1,0 +1,201 @@
+[Root]
+Most Recent Package=Paquete de instalación estándar 1
+
+
+[Package|Paquete de instalación estándar 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Instalar\Sistema_Compras
+
+[Package|Paquete de instalación estándar 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Paquete de instalación estándar 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Paquete de instalación estándar 1|Files Found]
+COMPROB_RET_IVAv01.RDF=C:\Vb6\Proyectos\Compras\COMPROB_RET_IVAv01.RDF
+EVALUACION.rdf=C:\Reports6\Compras\EVALUACION.rdf
+EVALUACION01.fmx=C:\Forms6\desica\Compras\EVALUACION01.fmx
+
+[Package|Paquete de instalación estándar 1|Files Released]
+
+[Package|Paquete de instalación estándar 1|Missing Dependency Information]
+C:\Archivos de programa\Archivos comunes\System\Ado\msado20.tlb=
+C:\WINNT\system32\MSSTDFMT.DLL=
+
+[Package|Paquete de instalación estándar 1|Out-of-Date Dependency Information]
+C:\WINNT\system32\COMDLG32.OCX=
+C:\WINNT\system32\MSCOMCTL.OCX=
+C:\WINNT\system32\MSADODC.OCX=
+C:\WINNT\system32\MSBIND.DLL=
+C:\WINNT\system32\MSSTDFMT.DLL=
+C:\Archivos de programa\Archivos comunes\Designer\MSDERUN.DLL=
+
+[Package|Paquete de instalación estándar 1|Files Added]
+ordenes_compra.fmx=
+evaluacion.rdf=
+evaluacion01.fmx=
+evaluacion02.fmx=
+proveedoresv2.fmx=
+proveedores.fmx=
+comprob_ret_ivav01.rdf=
+maestro_prov.rdf=
+evaluacionv2.rdf=
+relacion_ordenes.rdf=
+relacion_items.rdf=
+
+[Package|Paquete de instalación estándar 1|Files Removed]
+f:\reports6\compras\evaluacion.rdf=
+f:\forms6\desica\compras\proveedores.fmx=
+
+[Package|Paquete de instalación estándar 1|Files In Project]
+C:\WINNT\system32\MSVBVM60.DLL=Yes
+C:\WINNT\system32\OLEAUT32.DLL=Yes
+C:\WINNT\system32\OLEPRO32.DLL=Yes
+C:\WINNT\system32\ASYCFILT.DLL=Yes
+C:\WINNT\system32\STDOLE2.TLB=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINNT\system32\VB6ES.DLL=Yes
+C:\WINNT\system32\MSDATGRD.OCX=Yes
+C:\WINNT\system32\MSSTDFMT.DLL=Yes
+C:\WINNT\system32\DATGDES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\System\Ado\msado20.tlb=Yes
+C:\WINNT\system32\MSBIND.DLL=Yes
+C:\WINNT\system32\MSADODC.OCX=Yes
+C:\WINNT\system32\ADODCES.DLL=Yes
+C:\WINNT\system32\DBGRID32.OCX=Yes
+C:\WINNT\system32\DBGRDES.DLL=Yes
+C:\WINNT\system32\MSCOMCTL.OCX=Yes
+C:\WINNT\system32\MSCMCES.DLL=Yes
+C:\Archivos de programa\Archivos comunes\Designer\MSDERUN.DLL=Yes
+C:\WINNT\system32\COMDLG32.OCX=Yes
+C:\WINNT\system32\CMDLGES.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINNT\system32\VB6STKIT.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\Vb6\Proyectos\Compras\COMPRAS.exe=Yes
+C:\Forms6\desica\Compras\ORDENES_COMPRA.fmx=Yes
+C:\Reports6\Compras\EVALUACION.rdf=Yes
+C:\Forms6\desica\Compras\EVALUACION01.fmx=Yes
+C:\Forms6\desica\Compras\EVALUACION02.fmx=Yes
+C:\Forms6\desica\Compras\PROVEEDORESv2.fmx=Yes
+C:\Forms6\desica\Compras\PROVEEDORES.fmx=Yes
+C:\Vb6\Proyectos\Compras\COMPROB_RET_IVAv01.RDF=Yes
+C:\Reports6\Compras\MAESTRO_PROV.RDF=Yes
+C:\Reports6\Compras\EVALUACIONv2.RDF=Yes
+C:\Reports6\Compras\RELACION_ORDENES.rdf=Yes
+C:\Reports6\Compras\RELACION_ITEMS.RDF=Yes
+
+[Package|Paquete de instalación estándar 1|Configure Registry Files]
+Applicable=No
+
+[Package|Paquete de instalación estándar 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Paquete de instalación estándar 1|Install Locations]
+F:\Vb6\Proyectos\Compras\COMPRAS.exe=$(AppPath)
+C:\WINNT\system32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\VB6ES.DLL=$(WinSysPath)
+C:\WINNT\system32\MSDATGRD.OCX=$(WinSysPath)
+C:\WINNT\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINNT\system32\STDFTES.DLL=$(WinSysPath)
+C:\WINNT\system32\DATGDES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\System\Ado\msado20.tlb=$(WinSysPath)
+C:\WINNT\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINNT\system32\MSADODC.OCX=$(WinSysPath)
+C:\WINNT\system32\ADODCES.DLL=$(WinSysPath)
+C:\WINNT\system32\DBGRID32.OCX=$(WinSysPath)
+C:\WINNT\system32\DBGRDES.DLL=$(WinSysPath)
+C:\WINNT\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINNT\system32\MSCMCES.DLL=$(WinSysPath)
+C:\Archivos de programa\Archivos comunes\Designer\MSDERUN.DLL=$(CommonFiles)\designer
+C:\WINNT\system32\COMDLG32.OCX=$(WinSysPath)
+C:\WINNT\system32\CMDLGES.DLL=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINNT\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+F:\Forms6\desica\Compras\ORDENES_COMPRA.fmx=$(AppPath)
+F:\Reports6\Compras\EVALUACION.rdf=$(AppPath)
+F:\Forms6\desica\Compras\EVALUACION01.fmx=$(AppPath)
+F:\Forms6\desica\Compras\EVALUACION02.fmx=$(AppPath)
+F:\Forms6\desica\Compras\PROVEEDORESv2.fmx=$(AppPath)
+F:\Reports6\Compras\COMPROB_RET_IVAv01.RDF=$(AppPath)
+F:\Reports6\Compras\MAESTRO_PROV.RDF=$(AppPath)
+F:\Reports6\Compras\EVALUACIONv2.RDF=$(AppPath)
+F:\Reports6\Compras\RELACION_ORDENES.rdf=$(AppPath)
+F:\Reports6\Compras\RELACION_ITEMS.RDF=$(AppPath)
+C:\Vb6\Proyectos\Compras\COMPRAS.exe=$(AppPath)
+C:\Forms6\desica\Compras\ORDENES_COMPRA.fmx=$(AppPath)
+C:\Reports6\Compras\EVALUACION.rdf=$(AppPath)
+C:\Forms6\desica\Compras\EVALUACION01.fmx=$(AppPath)
+C:\Forms6\desica\Compras\EVALUACION02.fmx=$(AppPath)
+C:\Forms6\desica\Compras\PROVEEDORESv2.fmx=$(AppPath)
+C:\Forms6\desica\Compras\PROVEEDORES.fmx=$(AppPath)
+C:\Vb6\Proyectos\Compras\COMPROB_RET_IVAv01.RDF=$(AppPath)
+C:\Reports6\Compras\MAESTRO_PROV.RDF=$(AppPath)
+C:\Reports6\Compras\EVALUACIONv2.RDF=$(AppPath)
+C:\Reports6\Compras\RELACION_ORDENES.rdf=$(AppPath)
+C:\Reports6\Compras\RELACION_ITEMS.RDF=$(AppPath)
+
+[Package|Paquete de instalación estándar 1|Configure Shared Files]
+Applicable=Yes
+F:\Vb6\Proyectos\Compras\COMPRAS.exe=No
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+F:\Forms6\desica\Compras\ORDENES_COMPRA.fmx=No
+F:\Reports6\Compras\EVALUACION.rdf=No
+F:\Forms6\desica\Compras\EVALUACION01.fmx=No
+F:\Forms6\desica\Compras\EVALUACION02.fmx=No
+F:\Forms6\desica\Compras\PROVEEDORESv2.fmx=No
+F:\Reports6\Compras\COMPROB_RET_IVAv01.RDF=No
+F:\Reports6\Compras\MAESTRO_PROV.RDF=No
+F:\Reports6\Compras\EVALUACIONv2.RDF=No
+F:\Reports6\Compras\RELACION_ORDENES.rdf=No
+F:\Reports6\Compras\RELACION_ITEMS.RDF=No
+C:\Vb6\Proyectos\Compras\COMPRAS.exe=No
+C:\Forms6\desica\Compras\ORDENES_COMPRA.fmx=No
+C:\Reports6\Compras\EVALUACION.rdf=No
+C:\Forms6\desica\Compras\EVALUACION01.fmx=No
+C:\Forms6\desica\Compras\EVALUACION02.fmx=No
+C:\Forms6\desica\Compras\PROVEEDORESv2.fmx=No
+C:\Forms6\desica\Compras\PROVEEDORES.fmx=No
+C:\Vb6\Proyectos\Compras\COMPROB_RET_IVAv01.RDF=No
+C:\Reports6\Compras\MAESTRO_PROV.RDF=No
+C:\Reports6\Compras\EVALUACIONv2.RDF=No
+C:\Reports6\Compras\RELACION_ORDENES.rdf=No
+C:\Reports6\Compras\RELACION_ITEMS.RDF=No
+
+[Package|Paquete de instalación estándar 1|Distribution]
+Type=single
+Size=
+Title=Control de Compras
+
+[Package|Paquete de instalación estándar 1|IconGroups]
+Group0=Control de Compras
+PrivateGroup0=Falso
+Parent0=$(Programs)
+
+[Package|Paquete de instalación estándar 1|Control de Compras]
+Icon1=COMPRAS.exe
+Title1=Control de Compras
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Paquete de instalación estándar 1|Package]
+PackageFolder=C:\Instalar\Sistema_Compras
+ProjectFolder=C:\Vb6\Proyectos\Compras
+ServerSideCab=
+File1=C:\Instalar\Sistema_Compras\setup.exe
+File2=C:\Instalar\Sistema_Compras\Setup.Lst
+File3=C:\Instalar\Sistema_Compras\COMPRAS.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

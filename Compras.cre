@@ -1,0 +1,168 @@
+REMARK *----------------------------------------------------------------*
+REMARK *   Sistema Automatizado de Compras.                             *
+REMARK *   Autor: Henry J. Pulgar B.                                    *
+REMARK *   Creado el 14 de Abril del año 2003.                          *
+REMARK *   Actualizado el 20 de Octubre del año 2003.                   *
+REMARK *----------------------------------------------------------------*
+
+-- OJO: la desventaja de trabajar con sequencias ocurre cuando el
+--      campo en cuestion es reeditable y/o actualizable; Se explica
+--      esto cuando el usuario registra un salto fuera de la linea de
+--      control de la sequencia. Como se actualizaria la sequencia ???.
+--
+-- CON: utilizarlas exclusivamente para campos estaticamente controlados
+--      x el objeto sequencia.
+--
+REMARK: Crear y activar sequencia NO_COMPROBANTE
+REMARK -----------------------------------------
+create sequence NO_COMPROBANTE
+increment by 1
+start with 0
+minvalue  0
+order  ;
+
+REMARK : activar la secuencia
+select NO_COMPROBANTE.nextval from DUAL; --  ver also currval
+
+REMARK: Crear y activar sequencia NUMERO_ORDEN
+REMARK -----------------------------------------
+create sequence NUMERO_ORDEN
+increment by 1
+start with 0
+minvalue  0
+order ;
+
+REMARK : activar la secuencia
+select NUMERO_ORDEN.nextval from DUAL; --  ver also currval
+
+REMARK ------------------------------------------------------------------
+
+REMARK: Maestro Proveedores
+REMARK  ======= ===========
+create  table COMPRAS01_DAT
+( C1_CODIGO_PROV       VARCHAR2(8) not null,
+  C1_NOMBRE            VARCHAR2(50),
+  C1_RIF               VARCHAR2(20),
+  C1_NIT               VARCHAR2(20),
+  C1_DIRECCION1        VARCHAR2(30),
+  C1_DIRECCION2        VARCHAR2(30),
+  C1_DIRECCION3        VARCHAR2(30),
+  C1_TELEFONO1         VARCHAR2(12),
+  C1_TELEFONO2         VARCHAR2(12),
+  C1_FAX1              VARCHAR2(12),
+  C1_FAX2              VARCHAR2(12),
+  C1_REPRESENTANTE     VARCHAR2(35),
+  C1_PERSONA           VARCHAR2(35),
+  C1_PRODUCTO1         VARCHAR2(35),
+  C1_PRODUCTO2         VARCHAR2(35),
+  C1_PRODUCTO3         VARCHAR2(35),
+  C1_REFERENCIA1       VARCHAR2(35),
+  C1_REFERENCIA2       VARCHAR2(35),
+  C1_REFERENCIA3       VARCHAR2(35),
+  C1_SUCURSAL1         VARCHAR2(60),
+  C1_SUCURSAL2         VARCHAR2(60),
+  C1_SUCURSAL3         VARCHAR2(60),
+  C1_ANTIGUEDAD        NUMBER(3),
+  C1_FECHA_INCLUSION   DATE,
+  C1_ACTIVO            VARCHAR2(1)
+);
+
+REMARK: Maestro Ordenes de Compras
+REMARK  ======= ======= == =======
+create table COMPRAS02_DAT
+( C2_NUMERO_ORDEN       VARCHAR2(10) not null,
+  C2_FECHA_ORDEN        DATE not null,
+  C2_CODIGO_PROV        VARCHAR2(8) not null,
+  C2_TIPO_ORDEN         VARCHAR2(1),   -- S)ervicio/C)ompra.
+  C2_REQUISICION_NO1    VARCHAR2(10) not null,
+  C2_REQUISICION_NO2    VARCHAR2(10),
+  C2_FECHA_REQUISICION1 DATE         not null,
+  C2_FECHA_REQUISICION2 DATE,
+  C2_CONDICION_PAGO     VARCHAR2(10),
+  C2_REQUERIMIENTO      VARCHAR2(14),  --Etiqueta: Ejm: INMEDIATA.
+  C2_CON_TOTAL          VARCHAR2(1),   -- C)on Total/ S)in Total
+  C2_MONEDA_EXTRANJERA  NUMBER(1),     -- 0:Bs, 1:$, 2:Euro, 3:CHF, 4:otro $
+  C2_PARIDAD_MONEDA     NUMBER(12,2),
+  C2_STATUS             VARCHAR2(1)    -- D)iferido, A)ctualizada, I)mpresa
+  );
+
+REMARK: Detalle Orden de Compras
+REMARK  ======= ===== == =======
+create table COMPRAS03_DAT
+( C3_NUMERO_ORDEN     VARCHAR2(10) not null,
+  C3_CODIGO_ITEM      VARCHAR2(10),
+  C3_DESCRIPCION      VARCHAR2(50),
+  C3_CANTIDAD         NUMBER(15,2),
+  C3_PRECIO_UNID      NUMBER(15,2),
+  C3_TOTAL_ITEM       NUMBER(16,2)
+);
+
+REMARK : Maestro Comp Retencion IVA
+REMARK   ======= ============== ===
+create table COMPRAS04_DAT
+( C4_PERIODO_COMP    DATE  NOT NULL,        -- ANO/MES
+  C4_NUMERO_COMP     VARCHAR2(10) NOT NULL,
+  C4_FECHA_COMP      DATE  NOT NULL,        -- DD-MM-YYYY
+  C4_PERIODO_FISCAL  DATE  NOT NULL,        -- AÑO/MES
+  C4_NOMBRE_SUJ      VARCHAR2(40),
+  C4_RIF_SUJ         VARCHAR2(20) ) ;
+
+REMARK : Detalle Comp Retencion IVA
+REMARK   ======= ==== ========= ===
+create table COMPRAS05_DAT
+( C5_PERIODO_COMP    DATE NOT NULL,        -- AÑO/MES
+  C5_NUMERO_COMP     VARCHAR2(10) NOT NULL,
+  C5_OPER_NO         NUMBER(2),
+  C5_FECHA_FACT      DATE,                 -- DD-MM-YYYY
+  C5_NO_FACT         VARCHAR2(10),
+  C5_NO_CONTROL_FACT VARCHAR2(10),
+  C5_NO_ND           VARCHAR2(10),
+  C5_NO_NC           VARCHAR2(10),
+  C5_TIPO_TRANS      VARCHAR2(2),
+  C5_NO_FACT_AFECT   VARCHAR2(10),
+  C5_MONTO_COMPRA1   NUMBER(16,2),
+  C5_MONTO_COMPRA2   NUMBER(16,2),
+  C5_BASE_IMP        NUMBER(15,2),
+  C5_ALICUOTA        NUMBER(7,2),
+  C5_IVA             NUMBER(15,2),
+  C5_IVA_RET         NUMBER(15,2) );
+
+create table COMPRAS06_DAT
+(
+  C6_CODIGO_PROV     VARCHAR2(10) NOT NULL,
+  C6_FECHA           DATE NOT NULL,
+  C6_EVALUACION      NUMBER(1),   -- Rango: 1)Confiable, 2)Condicional, 3)No
+                                  --                                     Confia
+  C6_OBSERV1         VARCHAR2(50),
+  C6_OBSERV2         VARCHAR2(50)
+);
+
+create synonym BAN01_DAT for ops$desban01.BAN01_DAT;
+
+create table COMPRAS07_DAT
+(
+  C7_NUMERO_ORDEN    VARCHAR2(10),   -- > Este campo puede ser nulo
+  C7_NO_CHEQUE       VARCHAR2(20),
+  C7_COD_BANCO       VARCHAR2(6),
+  C7_MONTO           NUMBER(15,2) not null,
+  C7_CODIGO_PROV     VARCHAR2(8),
+  C7_NOMBRE          VARCHAR2(50) not null,
+  C7_FECHA           DATE         not null,
+  C7_PASSWD1         VARCHAR2(10),
+  C7_PASSWD2         VARCHAR2(10),
+  C7_STATUS          VARCHAR2(1)
+);
+
+
+/*//////////////// Crear Indice ///////////////////////////*/
+
+create unique index COMPRAS01_IND on COMPRAS01_DAT
+( C1_CODIGO_PROV );
+
+create unique index COMPRAS02_IND on COMPRAS02_DAT
+( C2_NUMERO_ORDEN );
+
+create unique index COMPRAS06_IND on COMPRAS06_DAT
+( C6_CODIGO_PROV, C6_FECHA );
+
+/*-----------------------------EOF(Compras.cre)-----------------------------*/
